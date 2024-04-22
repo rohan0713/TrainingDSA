@@ -4,7 +4,7 @@ import java.util.Arrays
 
 fun main() {
 
-    val array : Array<Int> = arrayOf(7, 2, 8, 1)
+    val array : Array<Int> = arrayOf(-5, 10, 5, 7, 2, 8, 1)
     val result = findTriplets(array, 10)
     for (arr in result){
         for (value in arr){

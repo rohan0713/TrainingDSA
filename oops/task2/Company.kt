@@ -2,20 +2,27 @@ package oops.task2
 
 fun main() {
 
-    val zelio = Inverters("ZELIO", true)
-    val icruze = Inverters("iCruze", true)
-    zelio.display()
-    println(icruze.getPowerRating())
 
     val solarPanel = SolarPanel(100)
-    val solarPanel2 = SolarPanel(200)
+    val pcu = PCU(solarPanel)
+    println(pcu.type)
+    println(pcu.getBatteryCount())
+    println(pcu.gridOn)
+    pcu.addBattery()
+    println(pcu.getBatteryCount())
+    pcu.addBattery()
+    println(pcu.getBatteryCount())
 
-    val si = SolarInverters("PCU", true, false, solarPanel)
-    val si2 = SolarInverters("GTI", false, true, solarPanel2)
-    val si3 = SolarInverters("REGALIA", false, true, solarPanel2)
+    val solarPanel2 = SolarPanel(50)
+    val gti = GTI(solarPanel2)
+    println(gti.type)
+    println(gti.getBatteryCount())
+    println(gti.gridOn)
+    gti.addBattery()
+    println(gti.getBatteryCount())
 
-    si.display()
-    si2.display()
-    println(si.solarPanel.capacity)
-    println(si.getPowerRating())
+    val zelio = Zelio()
+    println(zelio.type)
+    println(zelio.hasBattery)
+
 }

@@ -11,6 +11,9 @@ result = [2, 4, 6, 8, 10, 12, 14]
 
 */
 
+// reduce complexity
+// space complexity zero
+
 fun main() {
 
     val array = intArrayOf(2, 4, 6, 2, 8, 10, 4, 12, 14, 6)

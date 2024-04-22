@@ -9,11 +9,12 @@ public class king {
         Scanner s = new Scanner(System.in);
         int n = s.nextInt();
 
-        int[][] board = new int[n][n];
+        int[][] board = new int[2][2];
         int row_pos = s.nextInt();
         int column_pos = s.nextInt();
 
-        boolean isPresent = isSafe(board, row_pos, column_pos, n);
+
+        boolean isPresent = isSafe(board, row_pos, column_pos);
         if (isPresent){
             System.out.println("not safe");
         }else {
@@ -21,14 +22,14 @@ public class king {
         }
     }
 
-    private static boolean isSafe(int[][] board, int rowPos, int columnPos, int n) {
+    private static boolean isSafe(int[][] board, int rowPos, int columnPos) {
 
         // camel case
         int r = rowPos;
         int c = columnPos;
 
 
-        while(r >= 0 && c < n) {
+        while(r >= 0 && c < 8) {
             if (board[r][c] != 0) {
                 return true;
             }
@@ -39,7 +40,7 @@ public class king {
         r = rowPos;
         c = columnPos;
 
-        while (r > n && c >= 0){
+        while (r > 8 && c >= 0){
             if (board[r][c] != 0){
                 return true;
             }
@@ -62,7 +63,7 @@ public class king {
         r = rowPos;
         c = columnPos;
 
-        while (r < n && c < n){
+        while (r < 8 && c < 8){
             if (board[r][c] != 0){
                 return true;
             }
@@ -83,7 +84,7 @@ public class king {
         }
 
         r = rowPos;
-        while (r < n) {
+        while (r < 8) {
             if (board[r][c] != 0){
                 return true;
             }
@@ -103,21 +104,20 @@ public class king {
 
         //right check
         c = columnPos;
-        while (c < n ){
+        while (c < 8){
             if (board[r][c] != 0){
                 return true;
             }
             c++;
         }
 
-        //Queen case
-        return board[r - 1][c - 1] != 0 || board[r - 1][c] != 0 || board[r - 1][c + 1] != 0
-                || board[r][c - 1] != 0 && board[r][c + 1] != 0
-                || board[r + 1][c - 1] != 0 || board[r + 1][c] != 0 || board[r + 1][c + 1] != 0;
-
         //horse case
+        return board[r-2][c-1] != 0 || board[r-2][c+1] != 0 || board[r-1][c-2] != 0 || board[r-1][c+2] != 0
+                || board[r+1][c-2] != 0 || board[r+1][c+2] != 0 || board[r+2][c-1] != 0 || board[r+2][c+1] != 0;
+    }
 
-
+    public boolean isValid(int row, int column, int n) {
+        return row >= 0 && row < n && column >= 0 && column < n;
     }
 
 }

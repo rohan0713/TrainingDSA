@@ -6,13 +6,12 @@ fun main() {
     val person2 = Person("Ministers", "State")
     val person3 = Person("MP", "West Delhi")
 
-    val driver = Driver("harry")
-    person1.assignDriver(driver)
-    println(person1.constitute.getConstituency())
+    person1.assignDriver("harry")
     println(person1.getDriver())
+    println(person1.constitute.getConstituency())
 
     val expense = ExpenseLimit()
-    expense.makeExpenses(person1.name, 1000000000)
+    expense.makeExpenses(person1.name, 10000000)
 
     val limit = Expenses(person1.name, expense.getExpenses(person1.name))
     println(limit.exceedsSpendingLimit())

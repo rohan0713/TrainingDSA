@@ -21,7 +21,7 @@ fun main() {
     map["12"] = charArrayOf('L')
     map["3"] = charArrayOf('U', 'P')
 
-    val target = "123"
+    val target = "121"
 
     val result : MutableList<String> = mutableListOf()
     printCombinations(map, target, result, StringBuilder(), 0)
