@@ -25,11 +25,6 @@ public class combination {
         map.put(12, new char[]{'L'});
         map.put(3, new char[]{'U', 'P'});
 
-        findCombination(map);
     }
 
-    private static void findCombination(HashMap<Integer,char[]> map) {
-
-
-    }
 }
