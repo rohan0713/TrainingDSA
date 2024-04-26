@@ -9,7 +9,6 @@ fun main() {
     val cityManagement = n?.let { CityManagement(it) }
     val brickManagement = BrickManagement()
 
-
     for (j in 1..6) {
         println("Enter a user name")
         val name = readlnOrNull()
@@ -18,7 +17,6 @@ fun main() {
             userManagement.addUser(user)
         }
     }
-//    println(userManagement.getUsersCount())
 
     n?.let {
         wallInitialization(it, userManagement, cityManagement, brickManagement)

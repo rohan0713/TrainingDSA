@@ -12,15 +12,15 @@ result = [2, 4, 6, 8, 10, 12, 14]
 */
 
 // reduce complexity
-// space complexity zero
+// reduce space complexity
 
 fun main() {
 
     val array = intArrayOf(2, 4, 6, 2, 8, 10, 4, 12, 14, 6)
 
-    val ans = removeDuplicates2(array)
-    for (k in 0..<ans) {
-        print("${array[k]} ")
+    val ans = removeDuplicates3(array)
+    for (element in ans) {
+        print("$element ")
     }
 }
 
@@ -58,5 +58,22 @@ fun removeDuplicates2(array: IntArray) : Int {
         }
     }
     return i;
+}
+
+// Space complexity reduced
+fun removeDuplicates3(array: IntArray) : IntArray{
+
+    val set = HashSet<Int>()
+    for (i in array.indices) {
+        set.add(array[i])
+    }
+
+    val result = IntArray(set.size)
+    var j = 0;
+    for (element in set) {
+        result[j] = element
+        j++
+    }
+    return result
 }
 
